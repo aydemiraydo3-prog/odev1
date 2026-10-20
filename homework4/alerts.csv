@@ -1,0 +1,10 @@
+src_ip,method,url,attack,severity,action
+10.10.1.20,GET,/products?id=1' OR 1=1--,SQL_INJECTION,HIGH,BLOCK
+10.10.1.21,GET,/users?name=admin' union select password from users--,SQL_INJECTION,HIGH,BLOCK
+10.10.1.22,GET,/check?id=10; drop table users--,SQL_INJECTION,HIGH,BLOCK
+10.10.1.23,GET,/products?id=1%27%20OR%201%3D1--,SQL_INJECTION,HIGH,BLOCK
+10.10.1.30,GET,/search?q=%3Cscript%3Ealert(1)%3C/script%3E,XSS,HIGH,BLOCK
+10.10.1.31,GET,/profile?avatar=<img src=x onerror=alert('xss')>,XSS,HIGH,BLOCK
+10.10.1.40,GET,/download?file=../../../../etc/passwd,PATH_TRAVERSAL,MEDIUM,BLOCK
+10.10.1.41,GET,/files?path=..\..\windows\system32,PATH_TRAVERSAL,MEDIUM,BLOCK
+10.10.1.50,GET,/search?q=SQL UNION SELECT tutorial,SQL_INJECTION,HIGH,BLOCK
