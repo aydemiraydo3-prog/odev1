@@ -1,0 +1,4 @@
+id,severity,type
+2,high,bruteforce
+5,high,malware
+8,high,suspicious-login
